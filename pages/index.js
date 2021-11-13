@@ -6,8 +6,8 @@ import styles from '../styles/MyWallet.module.css'
 
 function MyWallet() {
   return (
-    <div>
-      <h1>Mi cuenta</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Mi cuenta</h1>
       <Balance />
       <Actions />
       <Transactions />
