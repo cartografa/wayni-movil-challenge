@@ -1,0 +1,40 @@
+.card {
+  margin-left: var(--medium-sp);
+  margin-right: var(--medium-sp);
+  padding: var(--big-sp);
+
+  border: 1px solid #D1D1D7;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.title,
+.balance {
+  text-align: center;
+}
+
+.horizontal_line {
+  margin: var(--medium-sp);
+  border: 1px solid #D1D1D7;
+  text-orientation: mixed;
+}
+
+.cvu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.balance {
+  font-size: 32px;
+  font-weight: 700;
+}
