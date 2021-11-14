@@ -21,6 +21,12 @@ function Transactions() {
     return normalizedDate
   }
 
+  const handleNumber = (APInumber, options = {
+    minimumFractionDigits: 2
+  }) => {
+    return APInumber.toLocaleString('de-DE', options).replaceAll('.','')
+  }
+
   const activityUI = (
     <ul className={styles.mov__list}>
       {activity.map(item => (
@@ -33,8 +39,8 @@ function Transactions() {
             <p></p>
           </div>
           {item.credit > 0
-            ? (<div className={styles.credit}>{`+ $${item.credit}`}</div>)
-            : (<div className={styles.debit}>{`- $${item.debit}`}</div>)
+            ? (<div className={styles.credit}>{`+ $${handleNumber(item.credit)}`}</div>)
+            : (<div className={styles.debit}>{`- $${handleNumber(item.debit)}`}</div>)
           }
         </li>
       ))}
