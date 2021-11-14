@@ -4,7 +4,10 @@
 }
 
 .title {
+  padding: var(--big-sp);
+
   text-align: center;
+  text-transform: capitalize;
   font-size: 18px;
   font-weight: 700;
 }

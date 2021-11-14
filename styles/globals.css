@@ -25,7 +25,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -35,6 +35,7 @@ body {
   justify-content: center;
 
   /* TEXT */
+  background-color: #e5e4e5;
   color: var(--color-primary)
 }
 
