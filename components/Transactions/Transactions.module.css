@@ -1,0 +1,59 @@
+.title__container {
+  color: var(--color-bg-light);
+  background-color: var(--color-primary);
+  padding: 8px var(--medium-sp);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mov__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* borde para todos los items de la lista menos el último */
+.mov__list .mov__item:not(:last-child) {
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.mov__item {
+  display: flex;
+  flex-direction: row;
+
+  background-color: var(--color-bg-light);
+  padding: 8px var(--medium-sp);
+}
+
+.mov__date,
+.mov__info {
+  align-self: flex-start;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mov__date {
+  flex-basis: 60px;
+  margin-right: var(--medium-sp);
+}
+
+.credit {
+  margin-left: auto;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.debit {
+  margin-left: auto;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+}

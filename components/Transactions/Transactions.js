@@ -11,24 +11,31 @@ function Transactions() {
 
   const activity = data.result.activity.result
 
+  const handleDate = (APIdate, options = {
+    year: '2-digit',
+    month: '2-digit',
+    day: '2-digit'
+  }) => {
+    const date = new Date(APIdate)
+    const normalizedDate = date.toLocaleString('es-AR', options).replaceAll('/', '-')
+    return normalizedDate
+  }
 
   const activityUI = (
-    <ul>
+    <ul className={styles.mov__list}>
       {activity.map(item => (
-        <li key={uuidv4()}>
-          <div>
-            <div>
-              <p>{item.date}</p>
-            </div>
-            <div>
-              <p>{item.info}</p>
-              <p></p>
-            </div>
-            {item.credit > 0
-              ? (<div className={styles.credit}>{`+ $${item.credit}`}</div>)
-              : (<div className={styles.debit}>{`- $${item.debit}`}</div>)
-            }
+        <li key={uuidv4()} className={styles.mov__item}>
+          <div className={styles.mov__date}>
+            <p>{handleDate(item.date)}</p>
           </div>
+          <div className={styles.mov__info}>
+            <p>{item.info}</p>
+            <p></p>
+          </div>
+          {item.credit > 0
+            ? (<div className={styles.credit}>{`+ $${item.credit}`}</div>)
+            : (<div className={styles.debit}>{`- $${item.debit}`}</div>)
+          }
         </li>
       ))}
     </ul>
@@ -36,8 +43,8 @@ function Transactions() {
 
   return (
     <div>
-      <div>
-        <h3>Movimientos</h3>
+      <div className={styles.title__container}>
+        <h3 className={styles.title}>Movimientos</h3>
       </div>
       {activityUI}
     </div>
