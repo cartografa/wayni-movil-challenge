@@ -1,0 +1,10 @@
+.container {
+  width: 22.5rem;
+  height: 100vh;
+}
+
+@media (max-width: 360px) {
+  .container {
+    width: 100%;
+  }
+}

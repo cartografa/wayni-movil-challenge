@@ -11,14 +11,14 @@
 
   --color-grey: #D1D1D7;
 
-  --shadows: 0px 0px 6px rgba(0, 0, 0, 0.15);
+  --shadows: 0 0 0.4375rem rgba(0, 0, 0, 0.15);
 
   /* SPACING */
-  --min-sp: 4px;
-  --small-sp: 8px;
-  --medium-sp: 12px;
-  --large-sp: 16px;
-  --big-sp: 24px;
+  --min-sp: 0.25rem;
+  --small-sp: 0.5rem;
+  --medium-sp: 0.75rem;
+  --large-sp: 1rem;
+  --big-sp: 1.5rem;
 }
 
 html,

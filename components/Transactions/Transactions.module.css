@@ -1,11 +1,11 @@
 .title__container {
   color: var(--color-bg-light);
   background-color: var(--color-primary);
-  padding: 8px var(--medium-sp);
+  padding: var(--small-sp) var(--medium-sp);
 }
 
 .title {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -16,29 +16,25 @@
   padding: 0;
 }
 
-/* borde para todos los items de la lista menos el último */
-.mov__list .mov__item:not(:last-child) {
-  border-bottom: 1px solid var(--color-grey);
-}
-
 .mov__item {
   display: flex;
   flex-direction: row;
 
   background-color: var(--color-bg-light);
-  padding: 8px var(--medium-sp);
+  border-bottom: 1px solid var(--color-grey);
+  padding: var(--small-sp) var(--medium-sp);
 }
 
 .mov__date,
 .mov__info {
   align-self: flex-start;
 
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
 .mov__date {
-  flex-basis: 60px;
+  flex-basis: 3.75rem;
   margin-right: var(--medium-sp);
 }
 
