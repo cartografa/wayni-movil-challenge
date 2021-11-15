@@ -32,7 +32,12 @@ function Balance() {
       <hr className={styles.horizontal_line}/>
       <div className={styles.cvu_container}>
         <p>CVU: <strong ref={cvuRef}>{cvu}</strong></p>
-        <button onClick={() => handleCopyToClipboard(cvuRef.current.innerText)}>Copiar</button>
+        <button
+          className={styles.btn}
+          onClick={() => handleCopyToClipboard(cvuRef.current.innerText)}
+        >
+          Copiar
+        </button>
       </div>
     </div>
   )
