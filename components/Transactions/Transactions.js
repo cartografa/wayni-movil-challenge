@@ -1,46 +1,32 @@
-import useUser from "../../hooks/useUser"
 import { v4 as uuidv4 } from 'uuid';
+import { normalizeDate } from '../../utilities/utils';
+import { normalizeNumber } from '../../utilities/utils';
 
 import styles from './Transactions.module.css'
 
-function Transactions() {
-  const { data, isLoading, isError } = useUser()
+function Transactions({ data }) {
+  const activity = data.activity.result
 
-  if (isLoading) return 'Cargando...'
-  if (isError) return 'Error!'
-
-  const activity = data.result.activity.result
-
-  const handleDate = (APIdate, options = {
-    year: '2-digit',
-    month: '2-digit',
-    day: '2-digit'
-  }) => {
-    const date = new Date(APIdate)
-    const normalizedDate = date.toLocaleString('es-AR', options).replaceAll('/', '-')
-    return normalizedDate
+  function toDate(date) {
+    return new Date(date)
   }
-
-  const handleNumber = (APInumber, options = {
-    minimumFractionDigits: 2
-  }) => {
-    return APInumber.toLocaleString('de-DE', options).replaceAll('.','')
-  }
+  // ordeno array de transacciones por fecha decreciente
+  activity = activity.sort((a, b) => toDate(b.date) - toDate(a.date))
 
   const activityUI = (
     <ul className={styles.mov__list}>
       {activity.map(item => (
         <li key={uuidv4()} className={styles.mov__item}>
           <div className={styles.mov__date}>
-            <p>{handleDate(item.date)}</p>
+            <p>{normalizeDate(item.date)}</p>
           </div>
           <div className={styles.mov__info}>
             <p>{item.info}</p>
-            <p></p>
+            <p>Aut.</p>
           </div>
           {item.credit > 0
-            ? (<div className={styles.credit}>{`+ $${handleNumber(item.credit)}`}</div>)
-            : (<div className={styles.debit}>{`- $${handleNumber(item.debit)}`}</div>)
+            ? (<div className={styles.credit}>{`+ $${normalizeNumber(item.credit)}`}</div>)
+            : (<div className={styles.debit}>{`- $${normalizeNumber(item.debit)}`}</div>)
           }
         </li>
       ))}
@@ -50,9 +36,9 @@ function Transactions() {
   return (
     <div>
       <div className={styles.title__container}>
-        <h3 className={styles.title}>Movimientos</h3>
+        <h2 className={styles.title}>Movimientos</h2>
       </div>
-      {activityUI}
+        {activityUI}
     </div>
   )
 }
