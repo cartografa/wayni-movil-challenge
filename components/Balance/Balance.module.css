@@ -50,6 +50,7 @@
   text-decoration: none;
   border: none;
 
+  transition: all 0.25s ease-in;
   cursor: pointer;
 }
 
