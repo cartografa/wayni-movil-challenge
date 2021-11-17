@@ -23,12 +23,14 @@
 
 .tab__line {
   width: 100%;
-  background-color: #0FD08B;
+  background-color: transparent;
   height: 2px;
 }
 
 .tab__line_active {
-
+  width: 100%;
+  background-color: #0FD08B;
+  height: 2px;
 }
 
 .tab__item {

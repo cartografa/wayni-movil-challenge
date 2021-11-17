@@ -6,10 +6,11 @@ import useUser from '../hooks/useUser'
 
 import styles from '../styles/MyWallet.module.css'
 
+
 function MyWallet() {
   const { data, isLoading, error } = useUser()
   
-  if (isLoading) return 'Cargando'
+  if (isLoading) return <div className={styles.container} />
   if (error) return 'Algo ha fallado :('
 
   return (
