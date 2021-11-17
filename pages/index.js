@@ -11,7 +11,7 @@ function MyWallet() {
   const { data, isLoading, error } = useUser()
   
   if (isLoading) return <div className={styles.container} />
-  if (error) return 'Algo ha fallado :('
+  if (error) return <div className={styles.container}>Algo ha fallado :(</div>
 
   return (
     <div className={styles.container}>

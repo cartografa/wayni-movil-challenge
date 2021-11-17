@@ -12,7 +12,6 @@ function Balance({ data }) {
   const [copyStatus, handleCopy] = useClipboard(data.bankInfo.result.cvu)
   const [isHidden, setIsHidden] = useState(false)
 
-  // convierto el saldo con separadores de punto y coma.
   const balance = data.balance.result.total.toLocaleString('de-DE')
   const cvu = data.bankInfo.result.cvu  
 
@@ -29,12 +28,12 @@ function Balance({ data }) {
               ? <Image
                 src={hide}
                 alt='closed eye'
-                role='hide balance'
+                aria-label='hide balance'
               />
               : <Image
                 src={show}
                 alt='open eye'
-                role='show balance'
+                aria-label='show balance'
               />
             }     
           </button>
@@ -45,9 +44,10 @@ function Balance({ data }) {
         <p>CVU: <strong>{cvu}</strong></p>
         <button
           className={styles.btn}
+          aria-label='copy cvu'
           onClick={() => handleCopy()}
         >
-          {copyStatus ? <span role='success'>✔️</span> : 'Copiar'}
+          {copyStatus ? <span aria-label='success'>✔️</span> : 'Copiar'}
         </button>
       </div>
     </div>

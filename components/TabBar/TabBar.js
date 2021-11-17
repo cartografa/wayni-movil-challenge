@@ -51,14 +51,12 @@ function TabBar() {
               className={styles.tab__item}>
               <div className={isActive[idx] ? styles.tab__line_active : styles.tab__line} />
               <Link href={routes[idx]}>
-                <a>
-                  <button
-                    id={idx}
-                    className={styles.tab__btn}
-                    onClick={() => handleActive(idx)}
-                  >
-                    <Image src={isActive[idx] ? activeIcons[idx] : icon } alt={`${icon} icon`}/>
-                  </button>
+                <a
+                  id={idx}
+                  className={styles.tab__btn}
+                  onClick={() => handleActive(idx)}
+                >
+                  <Image src={isActive[idx] ? activeIcons[idx] : icon} alt={`${icon} icon`}/>            
                 </a>
               </Link>
             </li>

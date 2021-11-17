@@ -1,11 +1,10 @@
+import styles from './PhoneSize.module.css'
+
 function PhoneSize({ children }) {
   return (
-      <div style={{
-          width: '360px',
-          height: '849px'
-      }}>
-          {children}
-      </div>
+    <div className={styles.container}>
+      {children}
+    </div>
   )
 }
 

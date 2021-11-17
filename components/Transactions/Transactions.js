@@ -14,7 +14,7 @@ function Transactions({ data }) {
   activity = activity.sort((a, b) => toDate(b.date) - toDate(a.date))
 
   const activityUI = (
-    <ul className={styles.mov__list}>
+    <ul aria-label='transaction list' className={styles.mov__list}>
       {activity.map(item => (
         <li key={uuidv4()} className={styles.mov__item}>
           <div className={styles.mov__date}>
@@ -22,7 +22,7 @@ function Transactions({ data }) {
           </div>
           <div className={styles.mov__info}>
             <p>{item.info}</p>
-            <p>Aut.</p>
+            <p>&nbsp;</p>
           </div>
           {item.credit > 0
             ? (<div className={styles.credit}>{`+ $${normalizeNumber(item.credit)}`}</div>)
